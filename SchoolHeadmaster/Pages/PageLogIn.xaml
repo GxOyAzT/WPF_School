@@ -1,0 +1,21 @@
+﻿<Page x:Class="SchoolHeadmaster.Pages.PageLogIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SchoolHeadmaster.Pages"
+      mc:Ignorable="d" 
+      MinHeight="400" MinWidth="700"
+      Title="PageLogIn">
+
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <Label Content="Log in"/>
+        <Label Content="Username"/>
+        <TextBox x:Name="TextBoxUsername" MinWidth="150"/>
+        <Label Content="Password"/>
+        <PasswordBox x:Name="PasswordBoxPassword" MinWidth="150"/>
+        <Button x:Name="ButtonLogIn" Content="Confirm"
+                Click="Click_LogIn"/>
+    </StackPanel>
+</Page>

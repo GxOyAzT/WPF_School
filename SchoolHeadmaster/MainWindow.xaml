@@ -1,0 +1,30 @@
+﻿<Window x:Class="SchoolHeadmaster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolHeadmaster"
+        mc:Ignorable="d" Background="#b0bec5"
+        Title="School" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="0" x:Name="FrameUserControl"
+                   NavigationUIVisibility="Hidden"/>
+            <StackPanel Grid.Column="1">
+                <Label x:Name="LabelUserName" Content="Head"/>
+                <Button x:Name="ButtonLogIn" Content="Log in" MaxWidth="100"
+                    Click="Click_LogIn"/>
+            </StackPanel>
+        </Grid>
+        <Frame Grid.Row="1" x:Name="FrameMain" NavigationUIVisibility="Hidden"
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

@@ -1,0 +1,50 @@
+﻿<Page x:Class="School.PagesTeacher.PageManageGrades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School.PagesTeacher"
+      mc:Ignorable="d" 
+      MinHeight="400" MinWidth="700"
+      Title="PageManageGrades">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" MinWidth="160">
+            <ComboBox x:Name="ComboBoxGradeThemes" Margin="5" 
+                      SelectionChanged="SelectionChanged_GradeThemes"
+                      ItemsSource="{Binding GradeTheme}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding GthName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBoxStudent" Margin="5"
+                      ItemsSource="{Binding Student}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding PerFullName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBoxGrade" Width="50">
+                
+            </ComboBox>
+            <Button x:Name="ButtonCreateGrade" Content="Confirm" Margin="5"
+                    Click="CLick_CreateGrade"/>
+        </StackPanel>
+        <DataGrid x:Name="DataGridStudentsGrades" ItemsSource="{Binding Grade}"
+                  CanUserAddRows="False" AutoGenerateColumns="False" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Student" Binding="{Binding Gra_StuFullName}"/>
+                <DataGridTextColumn Header="Grade title" Binding="{Binding GthName}"/>
+                <DataGridTextColumn Header="Grade" Binding="{Binding GraMark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

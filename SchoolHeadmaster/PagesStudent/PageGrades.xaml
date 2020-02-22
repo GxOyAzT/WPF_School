@@ -1,0 +1,21 @@
+﻿<Page x:Class="School.PagesStudent.PageGrades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:School.PagesStudent"
+      mc:Ignorable="d" 
+      MinHeight="400" MinWidth="700"
+      Title="PageGrades">
+
+    <StackPanel HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+        <DataGrid x:Name="DataGridGrades" ItemsSource="{Binding Grade}"
+                  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding GthName}"/>
+                <DataGridTextColumn Header="Grade" Binding="{Binding GraMark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Page>
